@@ -1,0 +1,11 @@
+qfunc main(output expectation_value: qbit) {
+  allocate<1>(expectation_value);
+  psi: qbit[];
+  allocate<4>(psi);
+  H(expectation_value);
+  control (expectation_value) {
+    qft(psi);
+  }
+  H(expectation_value);
+}
+
